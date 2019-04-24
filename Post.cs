@@ -13,16 +13,14 @@ namespace PropertyDemo
         {
             Vote = vote;
         }
-        public int UpVote()
+        public void UpVote()
         {
-            return Vote += 1;
+            Vote += 1;
         }
-        public int DownVote()
+        public void DownVote()
         {
             if (Vote >= 1)
                 Vote -= 1;
-
-            return Vote;
         }
     }
 }
