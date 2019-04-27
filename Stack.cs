@@ -17,12 +17,23 @@ namespace PropertyDemo
 
         public object Pop()
         {
-            if (_stack is null)
+            if (_stack.Count <= 0)
                 throw new InvalidOperationException();
 
             var last = _stack[_stack.Count - 1] as object;
             _stack.Remove(_stack[_stack.Count - 1]);
             return last;
+        }
+
+        public void Clear()
+        {
+            if (_stack.Count <= 0)
+                throw new InvalidOperationException();
+
+            for (var i = 0; i < _stack.Count; i++)
+            {
+                _stack.Remove(_stack[i]);
+            }
         }
     }
 }

@@ -15,6 +15,12 @@ namespace PropertyDemo
             stack.Push(2);
             stack.Push(3);
 
+            stack.Clear();
+
+            stack.Push(4);
+
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
             Console.WriteLine(stack.Pop());
