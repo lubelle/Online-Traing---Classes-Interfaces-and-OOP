@@ -10,16 +10,17 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
-            var post = new Post(10);
-            post.UpVote();
-            post.UpVote();
-            post.UpVote();
+            var stack = new Stack();
+            stack.Push(1);
+            stack.Push(2);
+            stack.Push(3);
 
-            post.DownVote();
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
+            Console.WriteLine(stack.Pop());
 
-
-            Console.WriteLine("Vote count: {0}", post.Vote);
             Console.ReadLine();
+
         }
     }
 }
