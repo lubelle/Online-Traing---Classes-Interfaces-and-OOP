@@ -10,20 +10,11 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
-            var stack = new Stack();
-            stack.Push(1);
-            stack.Push(2);
-            stack.Push(3);
+            var engine = new WorkFlowEngine();
+            engine.RegisterWorkFlowRepo(new DigitalMarketingWorkFlow());
+            engine.RegisterWorkFlowRepo(new EmailCampaignWorkFlow());
 
-            stack.Clear();
-
-            stack.Push(4);
-
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
-            Console.WriteLine(stack.Pop());
+            engine.Run();
 
             Console.ReadLine();
 
