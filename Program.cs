@@ -6,6 +6,7 @@ using System;
 
 namespace PropertyDemo
 {
+
     class Program
     {
         static void Main(string[] args)
@@ -13,13 +14,8 @@ namespace PropertyDemo
             var sqlConn = new SqlConnection("sql server database url");
             var oracleConn = new OracleConnection("oracle database url");
 
-            sqlConn.Open();
-            // DbSet ds = queryResult;
-            sqlConn.Close();
-
-            oracleConn.Open();
-            // query result;
-            oracleConn.Close();
+            var command = new DbCommand(oracleConn, "Select * from Customer");
+            command.Execute();
 
             Console.ReadLine();
 
