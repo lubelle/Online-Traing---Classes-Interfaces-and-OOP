@@ -10,11 +10,16 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
-            var engine = new WorkFlowEngine();
-            engine.RegisterWorkFlowRepo(new DigitalMarketingWorkFlow());
-            engine.RegisterWorkFlowRepo(new EmailCampaignWorkFlow());
+            var sqlConn = new SqlConnection("sql server database url");
+            var oracleConn = new OracleConnection("oracle database url");
 
-            engine.Run();
+            sqlConn.Open();
+            // DbSet ds = queryResult;
+            sqlConn.Close();
+
+            oracleConn.Open();
+            // query result;
+            oracleConn.Close();
 
             Console.ReadLine();
 
