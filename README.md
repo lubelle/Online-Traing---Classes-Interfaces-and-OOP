@@ -23,3 +23,6 @@ Unit Test:
 - isolate the class using an interface; arrange some preconditions 
 - act on a method
 - do assertions
+
+** Best practice on class design
+- Whenever you have a class that has a list of objects of any type, always initialized that list to an empty list. You could run into NullReferenceException if you don't. If List<T> is not initialiezed, by default because it is a reference type, it was set to null. So when we call a method() on a null object we get NullReferenceException.
