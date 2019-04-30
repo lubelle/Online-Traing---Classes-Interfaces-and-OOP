@@ -3,6 +3,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System;
+using System.Threading;
 
 namespace PropertyDemo
 {
@@ -11,13 +12,26 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
-            var sqlConn = new SqlConnection("sql server database url");
-            var oracleConn = new OracleConnection("oracle database url");
+            var watch = new Stopwatch();
 
-            var command = new DbCommand(oracleConn, "Select * from Customer");
-            command.Execute();
+            for (var i = 0; i < 3; i++)
+            {
+                watch.Start();
+                Thread.Sleep(i + 2000);
+                watch.Stop();
 
-            Console.ReadLine();
+                Console.WriteLine("Duration: {0}", watch.GetDuration());
+                Console.WriteLine("Press enter to run the stopwatch again");
+                Console.ReadLine();
+            }
+
+            //var sqlConn = new SqlConnection("sql server database url");
+            //var oracleConn = new OracleConnection("oracle database url");
+
+            //var command = new DbCommand(oracleConn, "Select * from Customer");
+            //command.Execute();
+
+            //Console.ReadLine();
 
         }
     }

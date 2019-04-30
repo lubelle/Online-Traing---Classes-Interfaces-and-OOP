@@ -4,21 +4,31 @@ namespace PropertyDemo
 {
     public class Stopwatch
     {
-        public DateTime Start { get; private set; }
+        private DateTime _startTime;
+        private DateTime _stopTime;
+        private bool _isRunning;
 
-
-        public Stopwatch(DateTime datetime)
+        public void Start()
         {
-            Start = datetime;
+            if (_isRunning)
+                throw new InvalidOperationException("Watch is still running ...");
+
+            _startTime = DateTime.Now;
+            _isRunning = true;
         }
 
-        public int Stop
+        public void Stop()
         {
-            get
-            {
-                var duration = DateTime.Now - Start;
-                return duration.Seconds;
-            }
+            if (!_isRunning)
+                throw new InvalidOperationException("Start the watch first!");
+
+            _stopTime = DateTime.Now;
+            _isRunning = false;
+        }
+
+        public TimeSpan GetDuration()
+        {
+            return _stopTime - _startTime;
         }
         
     }
