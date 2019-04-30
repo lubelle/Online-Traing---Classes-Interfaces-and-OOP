@@ -12,22 +12,36 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
+            var workflow = new WorkFlow();
+            workflow.Add(new UploadVideoTask());
+            workflow.Add(new CallVideoEncodeingAPI());
+            workflow.Add(new EmailNotificationOnProcessingStatus());
+            workflow.Add(new PersistProcessingStatusToDB());
 
-            var stack = new Stack();
-            for (var i = 0; i < 5; i++)
-            {
-                stack.Push(i);
-            }
+            var engine = new WorkFlowEngine();
 
-            stack.Clear();
-
-            for (var i = 0; i < 5; i++)
-            {
-                Console.WriteLine("Pop from the stack: {0}", stack.Pop());
-            }
+            engine.Run(workflow);
 
             Console.ReadLine();
 
+            // Design for Stack
+            //var stack = new Stack();
+            //for (var i = 0; i < 5; i++)
+            //{
+            //    stack.Push(i);
+            //}
+
+            //stack.Clear();
+
+            //for (var i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine("Pop from the stack: {0}", stack.Pop());
+            //}
+
+            //Console.ReadLine();
+
+
+            // Design for Stopwatch
             //var watch = new Stopwatch();
 
             //for (var i = 0; i < 2; i++)

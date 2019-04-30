@@ -5,24 +5,21 @@ namespace PropertyDemo
 {
     public class WorkFlowEngine
     {
-        private readonly IList<IWorkFlowRepo> _workFlowRepos;
-
-        public WorkFlowEngine()
+        public void Run(IWorkFlow workflow)
         {
-            _workFlowRepos = new List<IWorkFlowRepo>();
-        }
-
-        public void Run()
-        {
-            foreach (var repo in _workFlowRepos)
+            foreach (var task in workflow.GetTasks())
             {
-                repo.TaskRunner(new WorkFlow());
+                try
+                {
+                    task.Execute();
+                }
+                catch (System.Exception)
+                {
+                    // log the error message
+                    // terminate and persist the state of the workflow
+                    throw;
+                }
             }
-        }
-
-        public void RegisterWorkFlowRepo(IWorkFlowRepo repo)
-        {
-            _workFlowRepos.Add(repo);
         }
     }
 }
