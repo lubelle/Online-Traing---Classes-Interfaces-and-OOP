@@ -12,18 +12,34 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
-            var watch = new Stopwatch();
 
-            for (var i = 0; i < 3; i++)
+            var stack = new Stack();
+            for (var i = 0; i < 5; i++)
             {
-                watch.Start();
-                Thread.Sleep(i + 2000);
-                watch.Stop();
-
-                Console.WriteLine("Duration: {0}", watch.GetDuration());
-                Console.WriteLine("Press enter to run the stopwatch again");
-                Console.ReadLine();
+                stack.Push(i);
             }
+
+            stack.Clear();
+
+            for (var i = 0; i < 5; i++)
+            {
+                Console.WriteLine("Pop from the stack: {0}", stack.Pop());
+            }
+
+            Console.ReadLine();
+
+            //var watch = new Stopwatch();
+
+            //for (var i = 0; i < 2; i++)
+            //{
+            //    watch.Start();
+            //    Thread.Sleep(i + 2000);
+            //    watch.Stop();
+
+            //    Console.WriteLine("Duration: {0}", watch.GetDuration());
+            //    Console.WriteLine("Press enter to run the stopwatch again");
+            //    Console.ReadLine();
+            //}
 
             //var sqlConn = new SqlConnection("sql server database url");
             //var oracleConn = new OracleConnection("oracle database url");

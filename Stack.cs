@@ -5,7 +5,7 @@ namespace PropertyDemo
 {
     public class Stack
     {
-        private List<object> _stack = new List<object>();
+        private readonly List<object> _stack = new List<object>();
 
         public void Push(object obj)
         {
@@ -17,23 +17,18 @@ namespace PropertyDemo
 
         public object Pop()
         {
-            if (_stack.Count <= 0)
+            if (_stack.Count == 0)
                 throw new InvalidOperationException();
 
-            var last = _stack[_stack.Count - 1] as object;
-            _stack.Remove(_stack[_stack.Count - 1]);
+            var index = _stack.Count - 1;
+            var last = _stack[index];
+            _stack.RemoveAt(index);
             return last;
         }
 
         public void Clear()
         {
-            if (_stack.Count <= 0)
-                throw new InvalidOperationException();
-
-            for (var i = 0; i < _stack.Count; i++)
-            {
-                _stack.Remove(_stack[i]);
-            }
+            _stack.Clear();
         }
     }
 }
