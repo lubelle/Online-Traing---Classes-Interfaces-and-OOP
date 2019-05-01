@@ -27,3 +27,8 @@ Unit Test:
 ** Best practice on class design
 - Whenever you have a class that has a list of objects of any type, always initialized that list to an empty list. You could run into NullReferenceException if you don't. If List<T> is not initialiezed, by default because it is a reference type, it was set to null. So when we call a method() on a null object we get NullReferenceException.
 - Use object initializer to initialize properties or fields instead of overloading constructor() to do the same thing. And reserve constructors for scenarios where we really need to use them. Like an object cannot behave without being passed some initial values.
+- signature of a method: name; number and type of parameters
+- overloading methods: having a method with the same name but different signatures
+- use params modifier for methods with varying number of parameters
+- avoid design with ref modifier and out modifier
+  
