@@ -6,12 +6,13 @@ namespace PropertyDemo
     {
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime Created { get; set; }
+        public DateTime Created { get; private set; }
         public int Vote { get; private set; }
 
-        public Post(int vote)
+        public Post()
         {
-            Vote = vote;
+            Created = DateTime.Now;
+            Vote = 0;
         }
         public void UpVote()
         {
@@ -19,7 +20,7 @@ namespace PropertyDemo
         }
         public void DownVote()
         {
-            if (Vote >= 1)
+            if (Vote > 0)
                 Vote -= 1;
         }
     }

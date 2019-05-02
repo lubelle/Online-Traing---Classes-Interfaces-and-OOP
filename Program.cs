@@ -12,10 +12,25 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
-            var cookie = new HttpCookie();
-            cookie["name"] = "John";
-            Console.WriteLine(cookie["name"]);
+            var post = new Post();
+            Console.WriteLine("post created at {0} and the vote count is {1}",post.Created, post.Vote);
+
+            post.UpVote();
+            post.UpVote();
+            post.UpVote();
+            post.UpVote();
+            Console.WriteLine("post created at {0} and the vote count is {1}", post.Created, post.Vote);
+
+            post.DownVote();
+            post.DownVote();
+            post.DownVote();
+            Console.WriteLine("post created at {0} and the vote count is {1}", post.Created, post.Vote);
+
             Console.ReadLine();
+            //var cookie = new HttpCookie();
+            //cookie["name"] = "John";
+            //Console.WriteLine(cookie["name"]);
+            //Console.ReadLine();
 
             //var person = new Person(new DateTime(1998, 1, 1));
 
