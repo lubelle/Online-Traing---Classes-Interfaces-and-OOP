@@ -33,6 +33,6 @@ Unit Test:
 - avoid design with ref modifier and out modifier
 - use readonly modifier where you know that specific fields should be initialized only once (e.g. List&lt;Order&gt; Orders in Customer class). Side note: readonly field is set at run time; const field is set at compile time.
 - in proj bin\Debug folder; type command ildasm proj.exe ; ildasm stands for il disassembler; how setter and getter were done behind the scene
-- 
+- proper use of Indexer: same as property but declare with this[type varname] (e.g. public string this[string key]{ get; set; })
 
   
