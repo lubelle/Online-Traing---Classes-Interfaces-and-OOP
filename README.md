@@ -34,5 +34,6 @@ Unit Test:
 - use readonly modifier where you know that specific fields should be initialized only once (e.g. List&lt;Order&gt; Orders in Customer class). Side note: readonly field is set at run time; const field is set at compile time.
 - in proj bin\Debug folder; type command ildasm proj.exe ; ildasm stands for il disassembler; how setter and getter were done behind the scene
 - proper use of Indexer: same as property but declare with this[type varname] (e.g. public string this[string key]{ get; set; })
+- use of dictionary(internal data structure: hash table); whenever you have a list of objects and you want to look them up by a key as opposed to an index, you use a dictionary; if you have a list of objects and you would like to look them up by index, you use a list.
 
   
