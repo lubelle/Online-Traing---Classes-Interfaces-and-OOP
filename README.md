@@ -31,6 +31,6 @@ Unit Test:
 - overloading methods: having a method with the same name but different signatures
 - use params modifier for methods with varying number of parameters
 - avoid design with ref modifier and out modifier
-- use readonly modifier where you know that specific fields should be initialized only once (e.g. List<Order> Orders in Customer class)
+- use readonly modifier where you know that specific fields should be initialized only once (e.g. List&lt;Order&gt; Orders in Customer class)
 
   
