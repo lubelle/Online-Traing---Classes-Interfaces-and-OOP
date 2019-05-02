@@ -7,22 +7,25 @@ using System.Threading;
 
 namespace PropertyDemo
 {
-
     class Program
     {
         static void Main(string[] args)
         {
-            var workflow = new WorkFlow();
-            workflow.Add(new UploadVideoTask());
-            workflow.Add(new CallVideoEncodeingAPI());
-            workflow.Add(new EmailNotificationOnProcessingStatus());
-            workflow.Add(new PersistProcessingStatusToDB());
+            var person = new Person(new DateTime(1998, 1, 1));
 
-            var engine = new WorkFlowEngine();
-
-            engine.Run(workflow);
+            Console.WriteLine("Birth Date: {0}", person.Age);
 
             Console.ReadLine();
+            //var workflow = new WorkFlow();
+            //workflow.Add(new UploadVideoTask());
+            //workflow.Add(new CallVideoEncodeingAPI());
+            //workflow.Add(new EmailNotificationOnProcessingStatus());
+            //workflow.Add(new PersistProcessingStatusToDB());
+
+            //var engine = new WorkFlowEngine();
+            //engine.Run(workflow);
+
+            //Console.ReadLine();
 
             // Design for Stack
             //var stack = new Stack();
