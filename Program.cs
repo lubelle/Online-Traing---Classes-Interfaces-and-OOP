@@ -7,15 +7,21 @@ using System.Threading;
 
 namespace PropertyDemo
 {
+    
     class Program
     {
         static void Main(string[] args)
         {
-            var person = new Person(new DateTime(1998, 1, 1));
-
-            Console.WriteLine("Birth Date: {0}", person.Age);
-
+            var cookie = new HttpCookie();
+            cookie["name"] = "John";
+            Console.WriteLine(cookie["name"]);
             Console.ReadLine();
+
+            //var person = new Person(new DateTime(1998, 1, 1));
+
+            //Console.WriteLine("Birth Date: {0}", person.Age);
+
+            //Console.ReadLine();
             //var workflow = new WorkFlow();
             //workflow.Add(new UploadVideoTask());
             //workflow.Add(new CallVideoEncodeingAPI());
