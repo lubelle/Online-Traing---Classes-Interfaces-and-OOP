@@ -35,5 +35,8 @@ Unit Test:
 - in proj bin\Debug folder; type command ildasm proj.exe ; ildasm stands for il disassembler; how setter and getter were done behind the scene
 - proper use of Indexer: same as property but declare with this[type varname] (e.g. public string this[string key]{ get; set; })
 - use of dictionary(internal data structure: hash table); whenever you have a list of objects and you want to look them up by a key as opposed to an index, you use a dictionary; if you have a list of objects and you would like to look them up by index, you use a list.
+- class inheritance: code reuse and polymophic behavior
+- class composition: code reuse; flexibility; a means to loose-coupling
+- 
 
   
