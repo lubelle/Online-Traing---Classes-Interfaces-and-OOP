@@ -2,7 +2,7 @@
 
 
 Goal of software engineering: 
-We want to reduce the impact of change in our software.
+We want to reduce the impact of change in our software. We need to design our classes such that a change in a class is isolated and has minimal impact on other classes in the system. With composition we encapsulate some common functionality and then we compose them together to create new classes. Diagram -&gt; Person has Animal, Dog has Animal (original design); Person has IWalkable, Dog has IWalkable, Goldfish has Animal; Goldfish has ISwimmable (design open for extension, closed for modification).
 
 open closed principle (OCP) -
 Software entities should be open for extension but closed for modification.
