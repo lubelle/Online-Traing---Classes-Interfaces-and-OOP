@@ -7,24 +7,28 @@ using System.Threading;
 
 namespace PropertyDemo
 {
-    
+
     class Program
     {
         static void Main(string[] args)
         {
-            var post = new Post();
-            Console.WriteLine("post created at {0} and the vote count is {1}",post.Created, post.Vote);
+            var orderProcessor = new OrderProcessor(new ShippingCalculator());
+            var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+            orderProcessor.Process(order);
 
-            post.UpVote();
-            post.UpVote();
-            post.UpVote();
-            post.UpVote();
-            Console.WriteLine("post created at {0} and the vote count is {1}", post.Created, post.Vote);
+            //var post = new Post();
+            //Console.WriteLine("post created at {0} and the vote count is {1}",post.Created, post.Vote);
 
-            post.DownVote();
-            post.DownVote();
-            post.DownVote();
-            Console.WriteLine("post created at {0} and the vote count is {1}", post.Created, post.Vote);
+            //post.UpVote();
+            //post.UpVote();
+            //post.UpVote();
+            //post.UpVote();
+            //Console.WriteLine("post created at {0} and the vote count is {1}", post.Created, post.Vote);
+
+            //post.DownVote();
+            //post.DownVote();
+            //post.DownVote();
+            //Console.WriteLine("post created at {0} and the vote count is {1}", post.Created, post.Vote);
 
             Console.ReadLine();
             //var cookie = new HttpCookie();
