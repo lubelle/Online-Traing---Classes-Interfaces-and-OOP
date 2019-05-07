@@ -2,7 +2,7 @@
 
 
 Goal of software engineering: 
-We want to reduce the impact of change in our software.
+We want to reduce the impact of change in our software. We need to design our classes such that a change in a class is isolated and has minimal impact on other classes in the system. With composition we encapsulate some common functionality and then we compose them together to create new classes. Diagram -&gt; Person has Animal, Dog has Animal (original design); Person has IWalkable, Dog has IWalkable, Goldfish has Animal; Goldfish has ISwimmable (design open for extension, closed for modification).
 
 open closed principle (OCP) -
 Software entities should be open for extension but closed for modification.
@@ -35,5 +35,8 @@ Unit Test:
 - in proj bin\Debug folder; type command ildasm proj.exe ; ildasm stands for il disassembler; how setter and getter were done behind the scene
 - proper use of Indexer: same as property but declare with this[type varname] (e.g. public string this[string key]{ get; set; })
 - use of dictionary(internal data structure: hash table); whenever you have a list of objects and you want to look them up by a key as opposed to an index, you use a dictionary; if you have a list of objects and you would like to look them up by index, you use a list.
+- class inheritance: code reuse and polymophic behavior
+- class composition: code reuse; flexibility; a means to loose-coupling
+- 
 
   
