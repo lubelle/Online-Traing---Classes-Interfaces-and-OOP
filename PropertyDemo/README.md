@@ -37,6 +37,15 @@ Unit Test:
 - use of dictionary(internal data structure: hash table); whenever you have a list of objects and you want to look them up by a key as opposed to an index, you use a dictionary; if you have a list of objects and you would like to look them up by index, you use a list.
 - class inheritance: code reuse and polymophic behavior
 - class composition: code reuse; flexibility; a means to loose-coupling
-- 
 
-  
+** Abstract class and abstract methods indicate they are missing the implementation and the implementation needs to be provided in the derived classes
+- Do not include implementation
+- If a member is declared as abstract, the containing class needs to be declared as abstract too.
+- In derived classes, must implement all abstract members in the base abstract class.
+- Abstract class cannot be instantiated.
+- When you want to provide some common behaviour, while forcing other developers to follow your design.
+
+** Sealed Modifier (the opposite of abstract)
+- Prevents derivation of classes or overriding of methods
+- Sealed classes are slightly faster because of some run-time optimizations.
+- .NET class library e.g. string class
