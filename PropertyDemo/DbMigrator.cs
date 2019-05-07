@@ -6,10 +6,11 @@ namespace PropertyDemo
     {
         private readonly ILogger _logger;
 
-        public DbMigrator(ILogger logger)
+        public DbMigrator(ILogger logger)   // the extension point
         {
             _logger = logger;
         }
+
         public void Migrate()
         {
             _logger.LogInfo("Migration started at " + DateTime.Now);

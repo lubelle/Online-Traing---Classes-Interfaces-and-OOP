@@ -11,11 +11,25 @@ namespace PropertyDemo
     {
         static void Main(string[] args)
         {
+            // polymophic behavior of interface
+            var encoder = new VideoEncoder();
+            encoder.RegisterChannel(new EmailNotificationChannel());
+            encoder.RegisterChannel(new SmsNotificationChannel());
+            encoder.Encode(new Video());
+
             // interfaces and extensibility
             //var migrator = new DbMigrator(new ConsoleLogger());
-            var filePath = @"C:\Users\Belle\source\repos\PropertyDemo\";
-            var migrator = new DbMigrator(new FileLogger(filePath + "log.txt"));
-            migrator.Migrate();
+            //var filePath = @"C:\Users\Belle\source\repos\PropertyDemo\";
+            //var migrator = new DbMigrator(new FileLogger(filePath + "log.txt"));
+            //migrator.Migrate();
+
+            // extra credit 1: GPS App; to calculate the shortest distance between two points, 
+            // use an interface (e.g. IRouteCalculator) that finds the shortest path between these two points.
+            // In the future, you may come up with a better algorithm, simply create a new implementation 
+            // of that interface and inject that to your class without changing existing code.
+            // extra credit 2: Encription Service; create an interface called IEncryptor, 
+            // create a class that implements that interface with some basic encryption algorithm.
+            // Later change the behavior of the app by creating a new class that implements that interface.
 
             //var orderProcessor = new OrderProcessor(new ShippingCalculator());
             //var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
