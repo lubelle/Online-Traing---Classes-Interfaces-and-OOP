@@ -7,14 +7,19 @@ using System.Threading;
 
 namespace PropertyDemo
 {
-
     class Program
     {
         static void Main(string[] args)
         {
-            var orderProcessor = new OrderProcessor(new ShippingCalculator());
-            var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
-            orderProcessor.Process(order);
+            // interfaces and extensibility
+            //var migrator = new DbMigrator(new ConsoleLogger());
+            var filePath = @"C:\Users\Belle\source\repos\PropertyDemo\";
+            var migrator = new DbMigrator(new FileLogger(filePath + "log.txt"));
+            migrator.Migrate();
+
+            //var orderProcessor = new OrderProcessor(new ShippingCalculator());
+            //var order = new Order { DatePlaced = DateTime.Now, TotalPrice = 100f };
+            //orderProcessor.Process(order);
 
             //var post = new Post();
             //Console.WriteLine("post created at {0} and the vote count is {1}",post.Created, post.Vote);
