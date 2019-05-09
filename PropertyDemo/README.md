@@ -49,3 +49,9 @@ Unit Test:
 - Prevents derivation of classes or overriding of methods
 - Sealed classes are slightly faster because of some run-time optimizations.
 - .NET class library e.g. string class
+
+// using IEnumerable to return a read only list 
+// so consumer of this class can NOT access the private field _task
+// can only access the list via public Add() and Remove()
+** IEnumerable vs. IQueryable
+The main difference between “IEnumerable” and “IQueryable” is about where the filter logic is executed. One executes on the client side (in memory) and the other executes on the database.
